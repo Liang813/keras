@@ -1,4 +1,8 @@
 
+from keras import Input
+from keras.backend import int_shape
+from keras.layers import Conv2D, Conv2DTranspose
+
 conv = Conv2D(16, 3, strides=2, padding='same')
 transpose_conv = Conv2DTranspose(1, 3, strides=2, padding='same')
 
