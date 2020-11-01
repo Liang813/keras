@@ -1,4 +1,8 @@
 
+import numpy as np
+
+from keras.engine import Input, merge, Model
+
 a = np.reshape(np.array([0, 0]), (1, 2, 1)) # zero vector has zero length
 b = np.reshape(np.array([0.6, 0.8]), (1, 2, 1))
 
