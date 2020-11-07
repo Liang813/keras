@@ -11,6 +11,7 @@ print(df, end='\n\n')
 MAX_NUM_WORDS = 3
 
 tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
+print(tokenizer)
 tokenizer.fit_on_texts(df.text)
 sequences = tokenizer.texts_to_sequences(df.text)
 print(sequences, end='\n\n')
