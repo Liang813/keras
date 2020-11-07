@@ -1,6 +1,6 @@
-
 import pandas as pd
 
+import numpy as np
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 
@@ -11,7 +11,7 @@ print(df, end='\n\n')
 MAX_NUM_WORDS = 3
 
 tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
-print(tokenizer)
+
 tokenizer.fit_on_texts(df.text)
 sequences = tokenizer.texts_to_sequences(df.text)
 print(sequences, end='\n\n')
@@ -21,3 +21,7 @@ print('After Padding: \n',padded, end='\n\n')
 
 print(tokenizer.word_index)
 print(len(tokenizer.word_index))
+
+num_words = min(MAX_NUM_WORDS, len(tokenizer.word_index) + 1)
+embedding_matrix = np.zeros((num_words, 10))
+print(embedding_matrix.shape)
