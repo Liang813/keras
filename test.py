@@ -13,5 +13,6 @@ cos = merge([input_a, input_b], mode='cos', dot_axes=1)
 
 model = Model(input=[input_a, input_b], output=[cos])
 result = model.predict([a, b])
+print(result)
 # before fix: result  == [[[[ nan ]]]]
 # after fix: result == [[[[ 0. ]]]]
