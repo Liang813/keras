@@ -3,6 +3,7 @@ import keras.wrappers.scikit_learn
 import numpy as np
 import sklearn.linear_model
 import sklearn.metrics
+import re
 
 try:
     def build_net():
@@ -22,4 +23,4 @@ try:
     # TypeError: Singleton array array(0., dtype=float32) cannot be considered a valid collection.
     print(sklearn.metrics.mean_squared_error(y_true=Y, y_pred=Y_pred))
 except Exception as e:
-    print(str(e))
+    print(re.sub(u"([^\u4e00-\u9fa5\u0030-\u0039\u0041-\u005a\u0061-\u007a])","",str(e)))
