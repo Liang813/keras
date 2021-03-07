@@ -4,7 +4,7 @@ import numpy as np
 import sklearn.linear_model
 import sklearn.metrics
 import re
-import tsensor
+
 
 def build_net():
     model = keras.models.Sequential([keras.layers.Dense(units=1, input_dim=2)])
@@ -21,5 +21,4 @@ Y_pred = regressor.predict(X)
 print(Y_pred.shape)  # Is (), should be (1,)
 # As a result, this fails with an exception
 # TypeError: Singleton array array(0., dtype=float32) cannot be considered a valid collection.
-with tsensor.clarify():
-    print(sklearn.metrics.mean_squared_error(y_true=Y, y_pred=Y_pred))
+print(sklearn.metrics.mean_squared_error(y_true=Y, y_pred=Y_pred))
