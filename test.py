@@ -22,4 +22,5 @@ try:
     # TypeError: Singleton array array(0., dtype=float32) cannot be considered a valid collection.
     print(sklearn.metrics.mean_squared_error(y_true=Y, y_pred=Y_pred))
 except Exception as e:
+    print("TypeError")
     print(e)
