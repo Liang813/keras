@@ -6,4 +6,5 @@ try:
   with tsensor.clarify():
     NASNetLarge(include_top=False, input_shape=(512,512,3))
 except Exception as e:
+  print("ValueError")
   print(str(e))
