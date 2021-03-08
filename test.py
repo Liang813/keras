@@ -11,5 +11,5 @@ try:
   assert conv.input_shape == (None, 32, 32, 32, 3)
   conved_b = conv(b)
 except Exception as e:
-  print(ValueError)
+  print("ValueError")
   print(e)
